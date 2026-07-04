@@ -5,27 +5,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biltiau Nathan – Official Website</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #0a0a0a;
-        color: white;
+    /* --- VARIABLES & RESET --- */
+    :root {
+        --primary-color: #ff6600; /* Couleur d'accentuation (Orange) */
+        --bg-color: #0d0d0d;
+        --text-color: #e0e0e0;
+        --nav-bg: rgba(13, 13, 13, 0.85);
     }
 
-    /* --- HERO SECTION (photo fixe) --- */
+    * {
+        box-sizing: border-box;
+        scroll-behavior: smooth; /* Défilement fluide lors du clic sur le menu */
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Open Sans', sans-serif;
+        background: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 0;
+    }
+
+    /* --- HERO SECTION --- */
     .hero {
         height: 100vh;
-        background: url('BILTIAU_nathan/biltiau-nathan%20(4).jpg') center/cover fixed;
+        /* Ajout d'un filtre sombre (linear-gradient) pour faire ressortir le texte */
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(13,13,13,1)), url('BILTIAU_nathan/biltiau-nathan%20(4).jpg') center/cover fixed;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
+        padding: 0 20px;
     }
 
     .hero h1 {
-        font-size: 4rem;
-        text-shadow: 0 0 20px black;
+        font-size: clamp(3rem, 8vw, 5rem); /* Taille responsive */
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        color: white;
+        text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    }
+
+    .hero p.subtitle {
+        font-size: 1.2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: var(--primary-color);
     }
 
     /* --- NAVBAR --- */
@@ -33,37 +70,76 @@
         position: fixed;
         top: 0;
         width: 100%;
-        background: rgba(0,0,0,0.7);
-        padding: 15px;
+        background: var(--nav-bg);
+        padding: 20px;
         display: flex;
         justify-content: center;
         gap: 40px;
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     nav a {
         color: white;
         text-decoration: none;
-        font-size: 1.2rem;
-        transition: 0.3s;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        position: relative;
+        transition: color 0.3s;
     }
 
     nav a:hover {
-        color: #ff6600;
+        color: var(--primary-color);
     }
 
-    /* --- SECTIONS --- */
+    /* Animation de soulignement du menu */
+    nav a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        display: block;
+        margin-top: 5px;
+        right: 0;
+        background: var(--primary-color);
+        transition: width 0.3s ease;
+        -webkit-transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+        width: 100%;
+        left: 0;
+        background: var(--primary-color);
+    }
+
+    /* --- SECTIONS GÉNÉRALES --- */
     section {
-        padding: 80px 20px;
+        padding: 100px 20px;
         max-width: 900px;
         margin: auto;
     }
 
     h2 {
         font-size: 2.5rem;
-        margin-bottom: 20px;
-        border-left: 5px solid #ff6600;
-        padding-left: 10px;
+        margin-bottom: 40px;
+        border-left: 5px solid var(--primary-color);
+        padding-left: 15px;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: #b3b3b3;
+    }
+
+    /* --- BIOGRAPHIE --- */
+    #bio p {
+        text-align: justify;
     }
 
     /* --- GALLERY --- */
@@ -73,18 +149,71 @@
         gap: 20px;
     }
 
+    .gallery-item {
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
     .gallery img {
         width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 0 15px black;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.08); /* Effet de zoom fluide au survol */
+    }
+
+    /* --- GROUPES & PROJETS --- */
+    .project-item {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        border-left: 2px solid transparent;
+        transition: border-left 0.3s ease, background 0.3s ease;
+    }
+
+    .project-item:hover {
+        border-left: 2px solid var(--primary-color);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .project-item strong {
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    /* --- CONTACT --- */
+    .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-links a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+    }
+
+    .contact-links a:hover {
+        color: white;
     }
 
     /* --- FOOTER --- */
     footer {
         text-align: center;
         padding: 40px;
-        background: #111;
-        margin-top: 50px;
+        background: #050505;
+        font-size: 0.9rem;
+        color: #666;
+        border-top: 1px solid #1a1a1a;
     }
 </style>
 </head>
@@ -94,12 +223,13 @@
 <nav>
     <a href="#bio">Bio</a>
     <a href="#photos">Photos</a>
-    <a href="#groups">Groupes</a>
+    <a href="#groups">Projets</a>
     <a href="#contact">Contact</a>
 </nav>
 
 <div class="hero">
     <h1>Biltiau Nathan</h1>
+    <p class="subtitle">Batteur & Producteur</p>
 </div>
 
 <section id="bio">
@@ -108,11 +238,13 @@
         Originaire de Liège en Belgique, Biltiau Nathan est un batteur et producteur
         qui navigue entre deux mondes : la puissance organique du rock, du metal et du punk,
         et la création électronique en studio, où il façonne des atmosphères modernes et percutantes.
-        <br><br>
-        Sur scène, il a joué dans Gratin Van Frites et performe aujourd’hui avec le groupe bruxellois
-        Alice Wake Up. Il a également partagé la scène avec Dog Eat Dog, avec qui il a joué plusieurs fois,
+    </p>
+    <p>
+        Sur scène, il a joué dans <strong>Gratin Van Frites</strong> et performe aujourd’hui avec le groupe bruxellois
+        <strong>Alice Wake Up</strong>. Il a également partagé la scène avec <strong>Dog Eat Dog</strong>, avec qui il a joué plusieurs fois,
         renforçant son goût pour les performances brutes et intenses.
-        <br><br>
+    </p>
+    <p>
         En parallèle, Nathan développe un univers électronique personnel mêlant textures synthétiques,
         rythmes lourds et ambiances immersives.
     </p>
@@ -121,29 +253,37 @@
 <section id="photos">
     <h2>Photos Presse</h2>
     <div class="gallery">
-        <img src="BILTIAU_nathan/biltiau-nathan%20(2).jpg">
-        <img src="BILTIAU_nathan/biltiau-nathan%20(8).jpg">
-        <img src="BILTIAU_nathan/biltiau-nathan%20(7).jpg">
-        <img src="BILTIAU_nathan/biltiau-nathan%20(1).jpg">
-        <img src="BILTIAU_nathan/biltiau-nathan%20(9).jpg">
+        <div class="gallery-item"><img src="BILTIAU_nathan/biltiau-nathan%20(2).jpg" alt="Biltiau Nathan Live"></div>
+        <div class="gallery-item"><img src="BILTIAU_nathan/biltiau-nathan%20(8).jpg" alt="Biltiau Nathan Drums"></div>
+        <div class="gallery-item"><img src="BILTIAU_nathan/biltiau-nathan%20(1).jpg" alt="Biltiau Nathan Portrait"></div>
+        <div class="gallery-item"><img src="BILTIAU_nathan/biltiau-nathan%20(9).jpg" alt="Biltiau Nathan Studio"></div>
     </div>
 </section>
 
 <section id="groups">
     <h2>Groupes & Projets</h2>
-    <p><strong>• Alice Wake Up</strong> – Groupe bruxellois, performances live explosives.</p>
-    <p><strong>• Gratin Van Frites</strong> – Formation belge rock/metal.</p>
-    <p><strong>• Dog Eat Dog</strong> – Plusieurs performances live partagées.</p>
+    <div class="project-item">
+        <p><strong>Alice Wake Up</strong><br>Groupe bruxellois, performances live explosives.</p>
+    </div>
+    <div class="project-item">
+        <p><strong>Gratin Van Frites</strong><br>Formation belge rock/metal.</p>
+    </div>
+    <div class="project-item">
+        <p><strong>Dog Eat Dog</strong><br>Plusieurs performances live partagées.</p>
+    </div>
 </section>
 
 <section id="contact">
     <h2>Contact</h2>
-    <p>Email pro : <strong>tonemailpro@gmail.com</strong></p>
-    <p>Instagram : <strong>@toninsta</strong></p>
+    <p>Pour toute demande de booking, collaboration ou production :</p>
+    <div class="contact-links">
+        <a href="mailto:tonemailpro@gmail.com">✉️ tonemailpro@gmail.com</a>
+        <a href="https://instagram.com/toninsta" target="_blank" rel="noopener noreferrer">📷 Instagram : @toninsta</a>
+    </div>
 </section>
 
 <footer>
-    © 2024 – Biltiau Nathan
+    © 2024 – Biltiau Nathan | Tous droits réservés.
 </footer>
 
 </body>
