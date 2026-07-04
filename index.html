@@ -8,52 +8,40 @@
 </head>
 <body>
 
-    <!-- Menu -->
     <nav>
         <a href="index.html" class="logo">Biltiau Nathan</a>
         <div class="nav-links">
-            <a href="index.html" class="active">Accueil</a>
-            <a href="media.html">Médias & Vidéos</a>
-            <a href="liens.html">Plateformes & Contact</a>
+            <a href="index.html" class="active">Profil</a>
+            <a href="pages/media.html">Médias</a>
+            <a href="pages/liens.html">Réseaux & Contact</a>
         </div>
     </nav>
 
-    <!-- Contenu -->
-    <main>
-        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 50px; margin-top: 50px;">
-            <div style="flex: 1; min-width: 300px;">
-                <h1 style="font-size: 4rem;">Batteur <br><span style="color: var(--accent);">& Producteur.</span></h1>
-                <p style="font-size: 1.2rem; margin-top: 20px;">
-                    Originaire de Liège, je navigue entre la puissance organique du rock, du metal et du punk, 
-                    et la création électronique en studio pour façonner des atmosphères modernes et percutantes.
-                </p>
-                <div style="margin-top: 40px;">
-                    <a href="media.html" class="btn">Voir mes vidéos</a>
-                </div>
-            </div>
-            
-            <div style="flex: 1; min-width: 300px;">
-                <img src="BILTIAU_nathan/biltiau-nathan%20(4).jpg" alt="Nathan Live" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-            </div>
-        </div>
+    <!-- Hero Section avec background fixed -->
+    <header class="hero" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url('BILTIAU_nathan/biltiau-nathan%20(4).jpg') center/cover fixed;">
+        <h1>Biltiau Nathan</h1>
+        <p>Batteur — Producteur</p>
+    </header>
 
-        <section style="margin-top: 100px;">
-            <h2>Projets Actuels</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div style="background: var(--bg-card); padding: 30px; border-radius: 8px;">
-                    <h3 style="margin-bottom: 15px; color: var(--accent);">Alice Wake Up</h3>
-                    <p>Groupe bruxellois, performances live explosives alliant énergie brute et technique.</p>
-                </div>
-                <div style="background: var(--bg-card); padding: 30px; border-radius: 8px;">
-                    <h3 style="margin-bottom: 15px; color: var(--accent);">Studio & Électro</h3>
-                    <p>Développement d'un univers personnel mêlant textures synthétiques et rythmes lourds.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- Le contenu qui passe par-dessus la photo -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Présentation</h2>
+            <p>
+                Originaire de Liège en Belgique, Biltiau Nathan évolue au carrefour des musiques organiques et électroniques. Fort d'une expérience scénique et studio, son travail se caractérise par une approche rigoureuse et percutante du rythme.
+            </p>
+            <p>
+                Batteur au sein de la formation bruxelloise <strong>Alice Wake Up</strong> et anciennement de <strong>Gratin Van Frites</strong>, il s'est également illustré en partageant la scène avec des formations internationales telles que <strong>Dog Eat Dog</strong>.
+            </p>
+            <p>
+                Parallèlement à ses activités live, il développe des productions électroniques où le design sonore et la lourdeur rythmique occupent une place centrale.
+            </p>
+            <a href="pages/media.html" class="btn-corporate">Consulter les médias</a>
+        </div>
+    </section>
 
     <footer>
-        © 2024 Biltiau Nathan. Tous droits réservés.
+        © 2024 Biltiau Nathan — Tous droits réservés.
     </footer>
 
 </body>
