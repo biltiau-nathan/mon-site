@@ -3,91 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biltiau Nathan | Réseaux & Contact</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Biltiau Nathan | Contact</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
-<body style="padding-top: 80px;">
+<body style="padding-top: 100px;">
 
     <nav>
         <a href="../index.html" class="logo">Biltiau Nathan</a>
-        <button class="hamburger" id="hamburger">☰</button>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="../index.html">Profil</a></li>
-            <li><a href="concerts.html">Concerts</a></li>
-            <li><a href="media.html">Médias & Presse</a></li>
-            <li><a href="liens.html" class="active">Réseaux & Contact</a></li>
-        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="../index.html">Profil</a>
+            <a href="concerts.html">Concerts</a>
+            <a href="media.html">Médias & Presse</a>
+            <a href="liens.html" class="active">Réseaux & Contact</a>
+        </div>
     </nav>
 
-    <section class="content-section" style="min-height: 85vh;">
+    <section class="content-section">
         <div class="container" style="max-width: 800px;">
             
-            <h2>Écouter en direct</h2>
-            <!-- LECTEUR SPOTIFY INTÉGRÉ -->
-            <div style="margin-bottom: 50px;">
-                <!-- Tu pourras remplacer ce lien par l'ID Spotify de ton groupe ou de tes musiques -->
-                <iframe style="border-radius:12px" src="https://open.spotify.com/intl-fr/artist/0OO7rWemNmCclNxkHQGfa6" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <h2>Écoute & Plateformes</h2>
+            <div style="margin-bottom: 60px;">
+                <!-- Lien Spotify correct intégré -->
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/0OO7rWemNmCclNxkHQGfa6?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
 
-            <h2>Réseaux & Communauté</h2>
-            
-            <!-- YouTube avec Badge -->
-            <div class="social-box">
-                <div class="social-info">
-                    <h3>Chaîne YouTube</h3>
-                    <p>Vidéos live, drum playthroughs et productions studio.</p>
-                </div>
-                <div style="display: flex; align-items: center; gap: 15px;">
-                    <span class="subscriber-badge">2.5K+ Abonnés</span>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="btn-corporate" style="margin:0; padding: 12px 25px;">S'abonner</a>
-                </div>
-            </div>
-
-            <!-- Instagram avec Badge -->
-            <div class="social-box">
-                <div class="social-info">
-                    <h3>Instagram</h3>
-                    <p>Coulisses, stories en tournée et vie de studio.</p>
-                </div>
-                <div style="display: flex; align-items: center; gap: 15px;">
-                    <span class="subscriber-badge">4.8K+ Abonnés</span>
-                    <a href="https://instagram.com/toninsta" target="_blank" rel="noopener noreferrer" class="btn-corporate" style="margin:0; padding: 12px 25px;">Suivre</a>
-                </div>
-            </div>
-
-            <!-- Spotify Lien direct -->
-            <div class="social-box">
-                <div class="social-info">
-                    <h3>Spotify / Apple Music</h3>
-                    <p>Retrouvez la discographie complète d'Alice Wake Up.</p>
-                </div>
+            <h2>Réseaux</h2>
+            <div class="social-box" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #333;">
                 <div>
-                    <a href="#" target="_blank" class="btn-corporate" style="margin:0; padding: 12px 25px;">Écouter</a>
+                    <h3>Instagram</h3>
+                    <p style="color: #888;">Suivez le quotidien en studio et tournée.</p>
                 </div>
+                <a href="https://www.instagram.com/biltiau_nathan/" target="_blank" class="btn-corporate">Accéder</a>
             </div>
 
-            <!-- CONTACT PRO -->
-            <div class="contact-box">
-                <h3 style="font-weight: 300; letter-spacing: 3px; margin-bottom: 15px; text-transform: uppercase;">Management & Booking</h3>
-                <p style="margin-bottom: 25px; color: #aaa;">Pour toute demande de concert, session studio ou collaboration :</p>
-                <a href="mailto:tonemailpro@gmail.com" style="color: #fff; text-decoration: none; font-size: 1.3rem; border-bottom: 1px solid #fff; padding-bottom: 5px;">tonemailpro@gmail.com</a>
+            <h2 style="margin-top: 80px;">Booking & Contact</h2>
+            <div style="text-align: center; padding: 40px; border: 1px solid #333;">
+                <p style="margin-bottom: 20px;">Pour toute demande de collaboration ou booking :</p>
+                <a href="mailto:tonemailpro@gmail.com" style="font-size: 1.5rem; color: #fff; text-decoration: underline;">tonemailpro@gmail.com</a>
             </div>
 
         </div>
     </section>
 
-    <footer>
-        © 2024 Biltiau Nathan — Tous droits réservés.
-    </footer>
-
     <script>
-        const hamburger = document.getElementById('hamburger');
+        const menuToggle = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
-        hamburger.addEventListener('click', () => {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
-            hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
     </script>
-
 </body>
 </html>
