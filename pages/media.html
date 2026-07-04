@@ -3,107 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biltiau Nathan | Médias & Presse</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Biltiau Nathan | Médias</title>
+    <link rel="stylesheet" href="../style.css">
     <style>
-        .grid-corporate {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            background: #111;
-            border: 1px solid #222;
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        .photo-grid img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border: 1px solid #222;
-            filter: grayscale(100%);
-            transition: filter 0.4s ease, transform 0.4s ease;
-        }
-        .photo-grid img:hover {
-            filter: grayscale(0%);
-            transform: scale(1.01);
-        }
+        .grid-corporate { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 60px; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; background: #111; border: 1px solid #333; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .photo-grid img { width: 100%; height: 300px; object-fit: cover; border: 1px solid #333; filter: grayscale(100%); transition: filter 0.4s; }
+        .photo-grid img:hover { filter: grayscale(0%); }
+        /* Style pour aligner le titre et le bouton */
+        .header-media { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 15px; }
+        .header-media h2 { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
     </style>
 </head>
 <body style="padding-top: 80px;">
 
     <nav>
         <a href="../index.html" class="logo">Biltiau Nathan</a>
-        <button class="hamburger" id="hamburger">☰</button>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="../index.html">Profil</a></li>
-            <li><a href="concerts.html">Concerts</a></li>
-            <li><a href="media.html" class="active">Médias & Presse</a></li>
-            <li><a href="liens.html">Réseaux & Contact</a></li>
-        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="../index.html">Profil</a>
+            <a href="concerts.html">Concerts</a>
+            <a href="media.html" class="active">Médias & Presse</a>
+            <a href="liens.html">Réseaux & Contact</a>
+        </div>
     </nav>
 
-    <section class="content-section" style="min-height: 85vh;">
+    <section class="content-section" style="min-height: 80vh;">
         <div class="container">
             
-            <!-- BOUTON TÉLÉCHARGEMENT PRESSE (NOUVEAU) -->
-            <a href="../BILTIAU_nathan/PressKit_NathanBiltiau.zip" download class="btn-press">
-                <div>
-                    <h3 style="font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">Télécharger le Kit Presse Officiel</h3>
-                    <p style="font-size: 0.85rem; color: #888; margin: 0;">Photos HD, Biographie PDF, Fiche Technique (.ZIP)</p>
-                </div>
-                <div style="font-size: 1.5rem; font-weight: 300;">↓</div>
-            </a>
-
-            <h2>Archives Vidéos</h2>
+            <div class="header-media">
+                <h2>Archives Vidéos</h2>
+                <a href="../BILTIAU_nathan/Dossier_Presse_BiltiauNathan.zip" download class="btn-corporate btn-highlight">
+                    Télécharger le Kit Presse
+                </a>
+            </div>
+            
             <div class="grid-corporate">
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/ID_DE_LA_VIDEO" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/VOTRE_ID" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/ID_DE_LA_VIDEO" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/VOTRE_ID" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
 
-            <h2 style="margin-top: 60px;">Photographies</h2>
-            <p style="margin-bottom: 30px;">Cliquez pour afficher ou utilisez le kit presse pour les versions haute résolution.</p>
+            <h2 style="margin-top: 80px;">Photographies Officielles</h2>
             <div class="photo-grid">
                 <img src="../BILTIAU_nathan/biltiau-nathan%20(2).jpg" alt="Presse 1">
                 <img src="../BILTIAU_nathan/biltiau-nathan%20(8).jpg" alt="Presse 2">
                 <img src="../BILTIAU_nathan/biltiau-nathan%20(1).jpg" alt="Presse 3">
                 <img src="../BILTIAU_nathan/biltiau-nathan%20(9).jpg" alt="Presse 4">
             </div>
-
         </div>
     </section>
 
-    <footer>
-        © 2024 Biltiau Nathan — Tous droits réservés.
-    </footer>
+    <footer>© 2024 Biltiau Nathan — Tous droits réservés.</footer>
 
     <script>
-        const hamburger = document.getElementById('hamburger');
+        const menuToggle = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
-        hamburger.addEventListener('click', () => {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
-            hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
     </script>
-
 </body>
 </html>
