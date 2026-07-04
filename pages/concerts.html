@@ -3,90 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biltiau Nathan | Concerts & Dates</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Biltiau Nathan | Concerts</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body style="padding-top: 80px;">
 
     <nav>
         <a href="../index.html" class="logo">Biltiau Nathan</a>
-        <button class="hamburger" id="hamburger">☰</button>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="../index.html">Profil</a></li>
-            <li><a href="concerts.html" class="active">Concerts</a></li>
-            <li><a href="media.html">Médias & Presse</a></li>
-            <li><a href="liens.html">Réseaux & Contact</a></li>
-        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="../index.html">Profil</a>
+            <a href="concerts.html" class="active">Concerts</a>
+            <a href="media.html">Médias & Presse</a>
+            <a href="liens.html">Réseaux & Contact</a>
+        </div>
     </nav>
 
-    <section class="content-section" style="min-height: 85vh;">
+    <section class="content-section" style="min-height: 80vh;">
         <div class="container">
-            
-            <h2>Dates à venir</h2>
-            <div class="concert-list">
-                <!-- Concert 1 -->
-                <div class="concert-item">
-                    <div class="concert-date">15 OCT 2024</div>
-                    <div class="concert-info">
-                        <h4>Alice Wake Up</h4>
-                        <span>Le Botanique — Bruxelles, Belgique</span>
-                    </div>
-                    <a href="#" class="status-badge available" style="text-decoration: none;">Billets disponibles</a>
+            <h2>Upcoming Tour</h2>
+            <div class="tour-container">
+                <div class="tour-row">
+                    <div class="tour-date">12 NOV 2024</div>
+                    <div class="tour-artist">Alice Wake Up</div>
+                    <div class="tour-venue">Le Botanique, Bruxelles (BE)</div>
                 </div>
-                <!-- Concert 2 -->
-                <div class="concert-item">
-                    <div class="concert-date">28 NOV 2024</div>
-                    <div class="concert-info">
-                        <h4>Alice Wake Up</h4>
-                        <span>Trix — Anvers, Belgique</span>
-                    </div>
-                    <span class="status-badge">Bientôt disponible</span>
+                <div class="tour-row">
+                    <div class="tour-date">05 DEC 2024</div>
+                    <div class="tour-artist">Alice Wake Up</div>
+                    <div class="tour-venue">L'Entrepôt, Arlon (BE)</div>
                 </div>
             </div>
 
-            <h2 style="margin-top: 80px;">Archives & Dates Passées</h2>
-            <div class="concert-list">
-                <div class="concert-item" style="opacity: 0.6;">
-                    <div class="concert-date">12 MARS 2024</div>
-                    <div class="concert-info">
-                        <h4>Alice Wake Up</h4>
-                        <span>Reflektor — Liège, Belgique</span>
-                    </div>
-                    <span class="status-badge">Terminé</span>
+            <h2 style="margin-top: 80px;">Past Shows (Sélection)</h2>
+            <div class="tour-container tour-past">
+                <div class="tour-row">
+                    <div class="tour-date">15 AOU 2023</div>
+                    <div class="tour-artist">Support Dog Eat Dog</div>
+                    <div class="tour-venue">Reflektor, Liège (BE)</div>
                 </div>
-                <div class="concert-item" style="opacity: 0.6;">
-                    <div class="concert-date">18 NOV 2023</div>
-                    <div class="concert-info">
-                        <h4>Support pour Dog Eat Dog</h4>
-                        <span>Festival Arena — Belgique</span>
-                    </div>
-                    <span class="status-badge">Terminé</span>
-                </div>
-                <div class="concert-item" style="opacity: 0.6;">
-                    <div class="concert-date">05 SEPT 2022</div>
-                    <div class="concert-info">
-                        <h4>Gratin Van Frites</h4>
-                        <span>Scène Rock — Bruxelles, Belgique</span>
-                    </div>
-                    <span class="status-badge">Terminé</span>
+                <div class="tour-row">
+                    <div class="tour-date">10 JUI 2023</div>
+                    <div class="tour-artist">Gratin Van Frites</div>
+                    <div class="tour-venue">Festival XYZ, Namur (BE)</div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <footer>
-        © 2024 Biltiau Nathan — Tous droits réservés.
-    </footer>
+    <footer>© 2024 Biltiau Nathan — Tous droits réservés.</footer>
 
     <script>
-        const hamburger = document.getElementById('hamburger');
+        const menuToggle = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
-        hamburger.addEventListener('click', () => {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
-            hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
     </script>
-
 </body>
 </html>
