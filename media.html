@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biltiau Nathan | Médias</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques pour les vidéos YouTube */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 pour YouTube */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .photo-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            filter: grayscale(30%);
+            transition: filter 0.3s;
+        }
+        .photo-grid img:hover {
+            filter: grayscale(0%);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Biltiau Nathan</a>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="media.html" class="active">Médias & Vidéos</a>
+            <a href="liens.html">Plateformes & Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <h2>Vidéos Live & Studio</h2>
+        <p>Découvrez mes dernières performances et productions.</p>
+        
+        <div class="video-grid">
+            <!-- Remplace "VOTRE_ID_VIDEO" par l'ID de ta vraie vidéo YouTube -->
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/VOTRE_ID_VIDEO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- Tu peux copier-coller le bloc ci-dessus pour ajouter autant de vidéos que tu veux -->
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/VOTRE_ID_VIDEO" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <h2>Galerie Photo</h2>
+        <div class="photo-grid">
+            <img src="BILTIAU_nathan/biltiau-nathan%20(2).jpg" alt="Live 1">
+            <img src="BILTIAU_nathan/biltiau-nathan%20(8).jpg" alt="Drums">
+            <img src="BILTIAU_nathan/biltiau-nathan%20(1).jpg" alt="Studio">
+        </div>
+    </main>
+
+    <footer>
+        © 2024 Biltiau Nathan. Tous droits réservés.
+    </footer>
+
+</body>
+</html>
