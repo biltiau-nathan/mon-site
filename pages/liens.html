@@ -3,38 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biltiau Nathan | Contact</title>
+    <title>Biltiau Nathan | Réseaux & Contact</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .link-list {
-            list-style: none;
-            margin-top: 30px;
-        }
-        .link-list li {
-            border-bottom: 1px solid #222;
-        }
-        .link-list a {
+        .social-box {
+            background: #080808;
+            border: 1px solid #1a1a1a;
+            padding: 30px;
+            margin-bottom: 30px;
             display: flex;
             justify-content: space-between;
-            padding: 25px 0;
-            color: #ccc;
-            text-decoration: none;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .social-info h3 {
+            font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .social-info p {
             font-size: 0.9rem;
-            transition: color 0.3s;
+            color: #777;
+            margin: 0;
         }
-        .link-list a:hover {
+        .subscriber-badge {
+            background: #151515;
+            border: 1px solid #333;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
             color: #fff;
-        }
-        .link-list span {
-            color: #555;
+            text-transform: uppercase;
         }
         .contact-box {
             margin-top: 60px;
-            padding: 40px;
-            border: 1px solid #333;
+            padding: 50px 30px;
+            border: 1px solid #222;
             text-align: center;
+            background: #050505;
         }
     </style>
 </head>
@@ -42,34 +51,84 @@
 
     <nav>
         <a href="../index.html" class="logo">Biltiau Nathan</a>
-        <div class="nav-links">
-            <a href="../index.html">Profil</a>
-            <a href="media.html">Médias</a>
-            <a href="liens.html" class="active">Réseaux & Contact</a>
-        </div>
+        <button class="hamburger" id="hamburger">☰</button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Profil</a></li>
+            <li><a href="concerts.html">Concerts</a></li>
+            <li><a href="media.html">Médias & Presse</a></li>
+            <li><a href="liens.html" class="active">Réseaux & Contact</a></li>
+        </ul>
     </nav>
 
-    <section class="content-section" style="min-height: 80vh;">
-        <div class="container" style="max-width: 700px;">
-            <h2>Plateformes Officielles</h2>
-            <ul class="link-list">
-                <li><a href="#">Spotify <span>Écouter</span></a></li>
-                <li><a href="#">Apple Music <span>Écouter</span></a></li>
-                <li><a href="#">YouTube <span>Vidéos</span></a></li>
-                <li><a href="#">Instagram <span>Photos</span></a></li>
-            </ul>
-
-            <div class="contact-box">
-                <h3 style="font-weight: 300; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase;">Management & Booking</h3>
-                <p style="margin-bottom: 0;">Pour toute demande professionnelle, veuillez contacter :</p>
-                <a href="mailto:tonemailpro@gmail.com" style="color: #fff; text-decoration: none; font-size: 1.2rem; display: inline-block; margin-top: 15px;">tonemailpro@gmail.com</a>
+    <section class="content-section" style="min-height: 85vh;">
+        <div class="container" style="max-width: 800px;">
+            
+            <h2>Écouter en direct</h2>
+            <!-- LECTEUR SPOTIFY INTÉGRÉ -->
+            <div style="margin-bottom: 50px;">
+                <!-- Tu pourras remplacer ce lien par l'ID Spotify de ton groupe ou de tes musiques -->
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/3t5xRXz88eL7b53jG1Z86S?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
+
+            <h2>Réseaux & Communauté</h2>
+            
+            <!-- YouTube avec Badge -->
+            <div class="social-box">
+                <div class="social-info">
+                    <h3>Chaîne YouTube</h3>
+                    <p>Vidéos live, drum playthroughs et productions studio.</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <span class="subscriber-badge">2.5K+ Abonnés</span>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="btn-corporate" style="margin:0; padding: 12px 25px;">S'abonner</a>
+                </div>
+            </div>
+
+            <!-- Instagram avec Badge -->
+            <div class="social-box">
+                <div class="social-info">
+                    <h3>Instagram</h3>
+                    <p>Coulisses, stories en tournée et vie de studio.</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <span class="subscriber-badge">4.8K+ Abonnés</span>
+                    <a href="https://instagram.com/toninsta" target="_blank" rel="noopener noreferrer" class="btn-corporate" style="margin:0; padding: 12px 25px;">Suivre</a>
+                </div>
+            </div>
+
+            <!-- Spotify Lien direct -->
+            <div class="social-box">
+                <div class="social-info">
+                    <h3>Spotify / Apple Music</h3>
+                    <p>Retrouvez la discographie complète d'Alice Wake Up.</p>
+                </div>
+                <div>
+                    <a href="#" target="_blank" class="btn-corporate" style="margin:0; padding: 12px 25px;">Écouter</a>
+                </div>
+            </div>
+
+            <!-- CONTACT PRO -->
+            <div class="contact-box">
+                <h3 style="font-weight: 300; letter-spacing: 3px; margin-bottom: 15px; text-transform: uppercase;">Management & Booking</h3>
+                <p style="margin-bottom: 25px; color: #aaa;">Pour toute demande de concert, session studio ou collaboration :</p>
+                <a href="mailto:tonemailpro@gmail.com" style="color: #fff; text-decoration: none; font-size: 1.3rem; border-bottom: 1px solid #fff; padding-bottom: 5px;">tonemailpro@gmail.com</a>
+            </div>
+
         </div>
     </section>
 
     <footer>
         © 2024 Biltiau Nathan — Tous droits réservés.
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+    </script>
 
 </body>
 </html>
