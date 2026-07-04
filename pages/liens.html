@@ -3,67 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biltiau Nathan | Liens</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Biltiau Nathan | Contact</title>
+    <link rel="stylesheet" href="../style.css">
     <style>
-        .links-container {
-            max-width: 600px;
-            margin: 0 auto;
+        .link-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+        .link-list li {
+            border-bottom: 1px solid #222;
+        }
+        .link-list a {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
-            text-align: center;
-        }
-        .platform-link {
-            display: block;
-            padding: 20px;
-            background: var(--bg-card);
-            color: var(--text-main);
+            justify-content: space-between;
+            padding: 25px 0;
+            color: #ccc;
             text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
         }
-        .platform-link:hover {
-            background: var(--accent);
-            color: #000;
-            transform: scale(1.02);
+        .link-list a:hover {
+            color: #fff;
+        }
+        .link-list span {
+            color: #555;
+        }
+        .contact-box {
+            margin-top: 60px;
+            padding: 40px;
+            border: 1px solid #333;
+            text-align: center;
         }
     </style>
 </head>
-<body>
+<body style="padding-top: 80px;">
 
     <nav>
-        <a href="index.html" class="logo">Biltiau Nathan</a>
+        <a href="../index.html" class="logo">Biltiau Nathan</a>
         <div class="nav-links">
-            <a href="index.html">Accueil</a>
-            <a href="media.html">Médias & Vidéos</a>
-            <a href="liens.html" class="active">Plateformes & Contact</a>
+            <a href="../index.html">Profil</a>
+            <a href="media.html">Médias</a>
+            <a href="liens.html" class="active">Réseaux & Contact</a>
         </div>
     </nav>
 
-    <main>
-        <div class="links-container">
-            <h1 style="font-size: 2.5rem;">Écouter & Suivre</h1>
-            <p>Retrouvez-moi sur vos plateformes préférées.</p>
-            
-            <!-- Remplace les # par tes vrais liens -->
-            <a href="#" class="platform-link">🎧 Écouter sur Spotify</a>
-            <a href="#" class="platform-link">🍎 Apple Music</a>
-            <a href="#" class="platform-link">📺 Chaîne YouTube</a>
-            <a href="#" class="platform-link">📸 Instagram (@toninsta)</a>
-            
-            <h2 style="margin-top: 50px;">Contact Booking / Studio</h2>
-            <a href="mailto:tonemailpro@gmail.com" class="platform-link" style="background: transparent; border-color: var(--accent); color: var(--accent);">
-                ✉️ tonemailpro@gmail.com
-            </a>
+    <section class="content-section" style="min-height: 80vh;">
+        <div class="container" style="max-width: 700px;">
+            <h2>Plateformes Officielles</h2>
+            <ul class="link-list">
+                <li><a href="#">Spotify <span>Écouter</span></a></li>
+                <li><a href="#">Apple Music <span>Écouter</span></a></li>
+                <li><a href="#">YouTube <span>Vidéos</span></a></li>
+                <li><a href="#">Instagram <span>Photos</span></a></li>
+            </ul>
+
+            <div class="contact-box">
+                <h3 style="font-weight: 300; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase;">Management & Booking</h3>
+                <p style="margin-bottom: 0;">Pour toute demande professionnelle, veuillez contacter :</p>
+                <a href="mailto:tonemailpro@gmail.com" style="color: #fff; text-decoration: none; font-size: 1.2rem; display: inline-block; margin-top: 15px;">tonemailpro@gmail.com</a>
+            </div>
         </div>
-    </main>
+    </section>
 
     <footer>
-        © 2024 Biltiau Nathan. Tous droits réservés.
+        © 2024 Biltiau Nathan — Tous droits réservés.
     </footer>
 
 </body>
