@@ -1,308 +1,82 @@
+/* --- RESET & TYPOGRAPHIE CORPORATE --- */
 @import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+body { background-color: #000000; color: #ffffff; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-body {
-    background-color: #000000;
-    color: #ffffff;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-}
-
-/* --- NAVIGATION & MENU HAMBURGER --- */
+/* --- NAVIGATION --- */
 nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 20px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.95);
-    border-bottom: 1px solid #222222;
-    z-index: 1000;
+    position: fixed; top: 0; width: 100%; padding: 25px 50px; display: flex;
+    justify-content: space-between; align-items: center; background: rgba(0, 0, 0, 0.95);
+    border-bottom: 1px solid #333333; z-index: 1000;
 }
+.logo { font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: #ffffff; text-decoration: none; }
+.nav-links { display: flex; gap: 40px; }
+.nav-links a { color: #888888; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s ease; }
+.nav-links a:hover, .nav-links a.active { color: #ffffff; }
 
-.logo {
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #ffffff;
-    text-decoration: none;
+/* Menu Hamburger Animé (Caché sur PC) */
+.menu-toggle {
+    display: none; flex-direction: column; justify-content: space-between;
+    width: 30px; height: 21px; cursor: pointer; z-index: 1001;
 }
-
-.nav-links {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-}
-
-.nav-links a {
-    color: #888888;
-    text-decoration: none;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: #ffffff;
-}
-
-/* Bouton Hamburger (caché sur PC) */
-.hamburger {
-    display: none;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 1.8rem;
-}
+.menu-toggle span { display: block; height: 2px; width: 100%; background-color: #ffffff; transition: all 0.3s ease; }
+.menu-toggle.active span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
 
 /* --- HERO SECTION --- */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    padding: 0 20px;
-}
+.hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; z-index: 1; padding: 0 20px; }
+.hero h1 { font-size: 4.5rem; font-weight: 300; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 10px; }
+.hero p { font-size: 1rem; letter-spacing: 4px; text-transform: uppercase; color: #aaaaaa; }
 
-.hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 300;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
+/* --- SECTIONS --- */
+.content-section { background-color: #050505; padding: 100px 50px; position: relative; z-index: 2; border-top: 1px solid #222; }
+.container { max-width: 1000px; margin: 0 auto; }
+h2 { font-size: 2rem; font-weight: 300; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 15px; }
+h3 { font-size: 1.2rem; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; color: #fff; }
+p { font-size: 1rem; color: #cccccc; margin-bottom: 20px; font-weight: 300; }
 
-.hero p {
-    font-size: clamp(0.8rem, 2vw, 1rem);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #aaaaaa;
-}
-
-/* --- CONTENU --- */
-.content-section {
-    background-color: #050505;
-    padding: 100px 5%;
-    position: relative;
-    z-index: 2;
-    border-top: 1px solid #222;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-h2 {
-    font-size: 1.8rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 15px;
-}
-
-p {
-    font-size: 1rem;
-    color: #cccccc;
-    margin-bottom: 20px;
-    font-weight: 300;
-}
+/* --- STATISTIQUES (Accueil) --- */
+.stats-container { display: flex; justify-content: space-around; padding: 50px 0; border-top: 1px solid #222; border-bottom: 1px solid #222; margin: 50px 0; background: #0a0a0a; flex-wrap: wrap; gap: 30px;}
+.stat-box { text-align: center; min-width: 200px; }
+.stat-number { font-size: 3.5rem; font-weight: 300; color: #ffffff; margin-bottom: 5px; }
+.stat-label { font-size: 0.8rem; color: #888888; text-transform: uppercase; letter-spacing: 2px; }
 
 /* --- BOUTONS --- */
-.btn-corporate {
-    display: inline-block;
-    padding: 15px 35px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    transition: all 0.3s;
-    margin-top: 15px;
-    cursor: pointer;
-}
+.btn-corporate { display: inline-block; padding: 15px 40px; border: 1px solid #ffffff; color: #ffffff !important; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; transition: background 0.3s, color 0.3s; margin-top: 20px; cursor: pointer; }
+.btn-corporate:hover { background: #ffffff; color: #000000 !important; }
+.btn-highlight { background: transparent; border-color: #ffffff; font-weight: 700; }
 
-.btn-corporate:hover {
-    background: #ffffff;
-    color: #000000;
-}
+/* --- TOUR ROSTER (Concerts) --- */
+.tour-container { display: flex; flex-direction: column; }
+.tour-row { display: flex; align-items: center; justify-content: space-between; padding: 25px 20px; border-bottom: 1px solid #222; transition: background 0.3s ease, border-left 0.2s ease; border-left: 0px solid #ffffff; }
+.tour-row:hover { background: #111111; border-left: 4px solid #ffffff; }
+.tour-date { width: 120px; font-weight: 700; font-size: 1.1rem; color: #ffffff; }
+.tour-artist { flex: 1; font-weight: 300; font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; color: #ffffff; }
+.tour-venue { flex: 1; text-align: right; color: #888888; font-size: 0.95rem; }
+.tour-past { opacity: 0.5; }
+.tour-past:hover { opacity: 1; }
 
-.btn-press {
-    background: #1a1a1a;
-    border: 1px solid #444;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px;
-    text-decoration: none;
-    color: #fff;
-    margin-bottom: 40px;
-    transition: border-color 0.3s;
-}
+/* --- MATÉRIEL --- */
+.gear-list { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 40px; }
+.gear-item { background: #111; border: 1px solid #333; padding: 15px 25px; color: #ccc; font-size: 0.9rem; letter-spacing: 1px; }
 
-.btn-press:hover {
-    border-color: #fff;
-}
-
-/* --- STATS ACCUEIL --- */
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin: 60px 0;
-    text-align: center;
-}
-
-.stat-box {
-    border: 1px solid #1a1a1a;
-    padding: 30px;
-    background: #080808;
-}
-
-.stat-num {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 5px;
-}
-
-.stat-label {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #777777;
-}
-
-/* --- CONCERTS --- */
-.concert-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 60px;
-}
-
-.concert-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px;
-    background: #0a0a0a;
-    border: 1px solid #1a1a1a;
-    transition: border-color 0.3s;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.concert-item:hover {
-    border-color: #555;
-}
-
-.concert-date {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #fff;
-    min-width: 120px;
-}
-
-.concert-info {
-    flex: 1;
-    min-width: 200px;
-}
-
-.concert-info h4 {
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.concert-info span {
-    color: #777;
-    font-size: 0.9rem;
-}
-
-.status-badge {
-    padding: 8px 15px;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 1px solid #333;
-    color: #aaa;
-}
-
-.status-badge.available {
-    border-color: #fff;
-    color: #fff;
-    background: #111;
-}
-
-/* --- RESPONSIVE MOBILE (Téléphones) --- */
-@media screen and (max-width: 768px) {
-    .hamburger {
-        display: block;
+/* --- RESPONSIVE (Mobiles) --- */
+@media (max-width: 768px) {
+    nav { padding: 20px; }
+    .menu-toggle { display: flex; }
+    .nav-links { 
+        display: none; flex-direction: column; width: 100%; position: absolute; 
+        top: 100%; left: 0; background: rgba(0,0,0,0.98); border-bottom: 1px solid #333; padding: 20px 0;
     }
-
-    .nav-links {
-        position: fixed;
-        top: 65px;
-        right: -100%;
-        width: 100%;
-        height: calc(100vh - 65px);
-        background: #000000;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        transition: right 0.4s ease;
-        border-top: 1px solid #222;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links a {
-        font-size: 1.2rem;
-    }
-
-    .concert-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .status-badge {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-footer {
-    background-color: #000000;
-    text-align: center;
-    padding: 50px 20px;
-    border-top: 1px solid #1a1a1a;
-    font-size: 0.8rem;
-    color: #555;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 2;
+    .nav-links.active { display: flex; }
+    .nav-links a { padding: 15px 20px; border-bottom: 1px solid #222; text-align: center; }
+    .nav-links a:last-child { border-bottom: none; }
+    
+    .hero h1 { font-size: 2.5rem; }
+    .content-section { padding: 60px 20px; }
+    
+    .tour-row { flex-direction: column; align-items: flex-start; gap: 10px; padding: 20px; }
+    .tour-venue { text-align: left; }
 }
