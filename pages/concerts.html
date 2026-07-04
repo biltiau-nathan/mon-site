@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biltiau Nathan | Concerts & Dates</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding-top: 80px;">
+
+    <nav>
+        <a href="../index.html" class="logo">Biltiau Nathan</a>
+        <button class="hamburger" id="hamburger">☰</button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Profil</a></li>
+            <li><a href="concerts.html" class="active">Concerts</a></li>
+            <li><a href="media.html">Médias & Presse</a></li>
+            <li><a href="liens.html">Réseaux & Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="content-section" style="min-height: 85vh;">
+        <div class="container">
+            
+            <h2>Dates à venir</h2>
+            <div class="concert-list">
+                <!-- Concert 1 -->
+                <div class="concert-item">
+                    <div class="concert-date">15 OCT 2024</div>
+                    <div class="concert-info">
+                        <h4>Alice Wake Up</h4>
+                        <span>Le Botanique — Bruxelles, Belgique</span>
+                    </div>
+                    <a href="#" class="status-badge available" style="text-decoration: none;">Billets disponibles</a>
+                </div>
+                <!-- Concert 2 -->
+                <div class="concert-item">
+                    <div class="concert-date">28 NOV 2024</div>
+                    <div class="concert-info">
+                        <h4>Alice Wake Up</h4>
+                        <span>Trix — Anvers, Belgique</span>
+                    </div>
+                    <span class="status-badge">Bientôt disponible</span>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 80px;">Archives & Dates Passées</h2>
+            <div class="concert-list">
+                <div class="concert-item" style="opacity: 0.6;">
+                    <div class="concert-date">12 MARS 2024</div>
+                    <div class="concert-info">
+                        <h4>Alice Wake Up</h4>
+                        <span>Reflektor — Liège, Belgique</span>
+                    </div>
+                    <span class="status-badge">Terminé</span>
+                </div>
+                <div class="concert-item" style="opacity: 0.6;">
+                    <div class="concert-date">18 NOV 2023</div>
+                    <div class="concert-info">
+                        <h4>Support pour Dog Eat Dog</h4>
+                        <span>Festival Arena — Belgique</span>
+                    </div>
+                    <span class="status-badge">Terminé</span>
+                </div>
+                <div class="concert-item" style="opacity: 0.6;">
+                    <div class="concert-date">05 SEPT 2022</div>
+                    <div class="concert-info">
+                        <h4>Gratin Van Frites</h4>
+                        <span>Scène Rock — Bruxelles, Belgique</span>
+                    </div>
+                    <span class="status-badge">Terminé</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        © 2024 Biltiau Nathan — Tous droits réservés.
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+    </script>
+
+</body>
+</html>
