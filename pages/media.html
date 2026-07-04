@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biltiau Nathan | Médias</title>
-    <!-- On remonte d'un dossier pour trouver le style -->
+    <title>Biltiau Nathan | Médias & Presse</title>
     <link rel="stylesheet" href="style.css">
     <style>
         .grid-corporate {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
             margin-bottom: 60px;
         }
         .video-wrapper {
@@ -18,7 +17,7 @@
             padding-bottom: 56.25%;
             height: 0;
             background: #111;
-            border: 1px solid #333;
+            border: 1px solid #222;
         }
         .video-wrapper iframe {
             position: absolute;
@@ -29,19 +28,20 @@
         }
         .photo-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
         .photo-grid img {
             width: 100%;
-            height: 300px;
+            height: 350px;
             object-fit: cover;
-            border: 1px solid #333;
+            border: 1px solid #222;
             filter: grayscale(100%);
-            transition: filter 0.4s;
+            transition: filter 0.4s ease, transform 0.4s ease;
         }
         .photo-grid img:hover {
             filter: grayscale(0%);
+            transform: scale(1.01);
         }
     </style>
 </head>
@@ -49,18 +49,29 @@
 
     <nav>
         <a href="../index.html" class="logo">Biltiau Nathan</a>
-        <div class="nav-links">
-            <a href="../index.html">Profil</a>
-            <a href="media.html" class="active">Médias</a>
-            <a href="liens.html">Réseaux & Contact</a>
-        </div>
+        <button class="hamburger" id="hamburger">☰</button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Profil</a></li>
+            <li><a href="concerts.html">Concerts</a></li>
+            <li><a href="media.html" class="active">Médias & Presse</a></li>
+            <li><a href="liens.html">Réseaux & Contact</a></li>
+        </ul>
     </nav>
 
-    <section class="content-section" style="min-height: 80vh;">
+    <section class="content-section" style="min-height: 85vh;">
         <div class="container">
+            
+            <!-- BOUTON TÉLÉCHARGEMENT PRESSE (NOUVEAU) -->
+            <a href="../BILTIAU_nathan/PressKit_NathanBiltiau.zip" download class="btn-press">
+                <div>
+                    <h3 style="font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">Télécharger le Kit Presse Officiel</h3>
+                    <p style="font-size: 0.85rem; color: #888; margin: 0;">Photos HD, Biographie PDF, Fiche Technique (.ZIP)</p>
+                </div>
+                <div style="font-size: 1.5rem; font-weight: 300;">↓</div>
+            </a>
+
             <h2>Archives Vidéos</h2>
             <div class="grid-corporate">
-                <!-- Intégration YouTube -->
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/ID_DE_LA_VIDEO" frameborder="0" allowfullscreen></iframe>
                 </div>
@@ -69,19 +80,30 @@
                 </div>
             </div>
 
-            <h2 style="margin-top: 80px;">Photographies</h2>
+            <h2 style="margin-top: 60px;">Photographies</h2>
+            <p style="margin-bottom: 30px;">Cliquez pour afficher ou utilisez le kit presse pour les versions haute résolution.</p>
             <div class="photo-grid">
-                <!-- On remonte d'un dossier pour trouver les images -->
                 <img src="../BILTIAU_nathan/biltiau-nathan%20(2).jpg" alt="Presse 1">
                 <img src="../BILTIAU_nathan/biltiau-nathan%20(8).jpg" alt="Presse 2">
                 <img src="../BILTIAU_nathan/biltiau-nathan%20(1).jpg" alt="Presse 3">
+                <img src="../BILTIAU_nathan/biltiau-nathan%20(9).jpg" alt="Presse 4">
             </div>
+
         </div>
     </section>
 
     <footer>
         © 2024 Biltiau Nathan — Tous droits réservés.
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+    </script>
 
 </body>
 </html>
